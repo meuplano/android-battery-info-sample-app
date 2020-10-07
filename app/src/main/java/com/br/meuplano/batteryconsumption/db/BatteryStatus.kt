@@ -11,7 +11,7 @@ data class BatteryStatus(
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0,
     val date: Date,
-    val helth: BatteryHelthType,
+    val health: BatteryHealthType,
     val currentLevel: Int,
     val powerSource: BatteryPowerSourceType,
     val isPresent: Boolean,
@@ -27,7 +27,7 @@ data class BatteryStatus(
     val remainingEnergiNanowattHour: Long
 )
 
-enum class BatteryHelthType(val value: Int) {
+enum class BatteryHealthType(val value: Int) {
 
     COLD(7),
     DEAD(4),

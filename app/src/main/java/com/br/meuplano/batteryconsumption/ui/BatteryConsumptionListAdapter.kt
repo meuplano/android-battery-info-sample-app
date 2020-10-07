@@ -31,7 +31,7 @@ class BatteryConsumptionListAdapter(
 
         private val tvCapacityRemainingPercentage: TextView = itemView.tvCapacityRemainingPercentage
         private val tvDate: TextView = itemView.tvDate
-        private val tvHelth: TextView = itemView.tvHelth
+        private val tvHealth: TextView = itemView.tvHealth
         private val tvTemperature: TextView = itemView.tvTemperature
         private val tvPowerSource: TextView = itemView.tvPowerSource
         private val tvStatus: TextView = itemView.tvStatus
@@ -40,7 +40,7 @@ class BatteryConsumptionListAdapter(
             with(itemBatteryStatus){
                 tvCapacityRemainingPercentage.setText("${this.capacityRemainingPercentage}")
                 tvDate.setText(this.date.toString())
-                tvHelth.setText(this.helth.toString())
+                tvHealth.setText(this.health.toString())
                 tvTemperature.setText(this.temperature.toString())
                 tvPowerSource.setText(this.powerSource.toString())
                 tvStatus.setText(this.status.toString())

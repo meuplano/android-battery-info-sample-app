@@ -15,12 +15,12 @@ class Converters {
     }
 
     @TypeConverter
-    fun fromIntToBatteryHelth(value: Int?): BatteryHelthType?{
-        return if(value == null) null else BatteryHelthType.getByValue(value)
+    fun fromIntToBatteryHealth(value: Int?): BatteryHealthType?{
+        return if(value == null) null else BatteryHealthType.getByValue(value)
     }
 
     @TypeConverter
-    fun fromBatteryHelthToInt(value: BatteryHelthType?): Int?{
+    fun fromBatteryHealthToInt(value: BatteryHealthType?): Int?{
         return if(value == null) null else value.value
     }
 

@@ -25,7 +25,7 @@ class BatteryUsageWorker(context: Context, params: WorkerParameters) :
         val manager = applicationContext.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
         val bStatus = BatteryStatus(
             date = Date(),
-            helth = BatteryHelthType.getByValue(
+            health = BatteryHealthType.getByValue(
                 batteryStatus?.getIntExtra(
                     BatteryManager.EXTRA_HEALTH,
                     1

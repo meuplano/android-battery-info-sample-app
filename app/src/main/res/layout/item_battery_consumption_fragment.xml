@@ -68,10 +68,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Helth"/>
+                        android:text="Health"/>
 
                     <TextView
-                        android:id="@+id/tvHelth"
+                        android:id="@+id/tvHealth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="70"
