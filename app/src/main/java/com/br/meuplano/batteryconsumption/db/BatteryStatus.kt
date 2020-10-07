@@ -1,0 +1,69 @@
+package com.br.meuplano.batteryconsumption.db
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import java.util.*
+
+@Entity
+@TypeConverters(Converters::class)
+data class BatteryStatus(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0,
+    val date: Date,
+    val helth: BatteryHelthType,
+    val currentLevel: Int,
+    val powerSource: BatteryPowerSourceType,
+    val isPresent: Boolean,
+    val maxLevel: Int,
+    val status: BatteryStatusType,
+    val technology: String,
+    val temperature: Int,
+    val voltageLevel: Int,
+    val capacityRemainingPercentage: Int,
+    val capacityInMicroampereHours: Int,
+    val averageMicroamperes: Int,
+    val currentMicroamperes: Int,
+    val remainingEnergiNanowattHour: Long
+)
+
+enum class BatteryHelthType(val value: Int) {
+
+    COLD(7),
+    DEAD(4),
+    GOOD(2),
+    OVERHEAT(3),
+    OVER_VOLTAGE(5),
+    UNKNOWN(1),
+    UNSPECIFIED_FAILURE(6);
+
+    companion object {
+        private val values = values()
+        fun getByValue(value: Int) = values.first { it.value == value }
+    }
+}
+
+enum class BatteryPowerSourceType(val value: Int) {
+    NONE(0),
+    AC(1),
+    USB(2),
+    WIRELESS(4);
+
+    companion object {
+        private val values = values()
+        fun getByValue(value: Int) = values.first { it.value == value }
+    }
+}
+
+enum class BatteryStatusType(val value: Int) {
+    CHARGING(2),
+    DISCHARGING(3),
+    FULL(5),
+    NOT_CHARGING(4),
+    UNKNOWN(1);
+
+    companion object {
+        private val values = values()
+        fun getByValue(value: Int) = values.first { it.value == value }
+    }
+}
