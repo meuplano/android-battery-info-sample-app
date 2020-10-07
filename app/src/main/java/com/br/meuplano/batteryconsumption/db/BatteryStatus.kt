@@ -24,7 +24,7 @@ data class BatteryStatus(
     val capacityInMicroampereHours: Int,
     val averageMicroamperes: Int,
     val currentMicroamperes: Int,
-    val remainingEnergiNanowattHour: Long
+    val remainingEnergyNanowattHour: Long
 )
 
 enum class BatteryHealthType(val value: Int) {

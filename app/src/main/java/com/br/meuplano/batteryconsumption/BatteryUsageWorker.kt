@@ -53,7 +53,7 @@ class BatteryUsageWorker(context: Context, params: WorkerParameters) :
             capacityInMicroampereHours = manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER),
             averageMicroamperes = manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_AVERAGE),
             currentMicroamperes = manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW),
-            remainingEnergiNanowattHour = manager.getLongProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER),
+            remainingEnergyNanowattHour = manager.getLongProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER),
         )
         val id = AppDatabase.getInstance(applicationContext).batteryDao().insert(bStatus)
         if(id <= 0)
