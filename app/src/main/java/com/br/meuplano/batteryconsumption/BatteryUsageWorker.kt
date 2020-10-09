@@ -56,8 +56,10 @@ class BatteryUsageWorker(context: Context, params: WorkerParameters) :
             remainingEnergyNanowattHour = manager.getLongProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER),
         )
         val id = AppDatabase.getInstance(applicationContext).batteryDao().insert(bStatus)
-        if(id <= 0)
+        if(id <= 0) {
+            Log.wtf(TAG, "Persisting error")
             Result.retry()
+        }
         Log.wtf(TAG, Gson().toJson(bStatus))
         Result.success()
     }

@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBatteryUsageWorker(existingPeriodicWorkPolicy: ExistingPeriodicWorkPolicy) {
-        val sendConsumptionWorkRequest =
+        val batteryUsageWorkRequest =
             PeriodicWorkRequestBuilder<BatteryUsageWorker>(
                 PeriodicWorkRequest.MIN_PERIODIC_INTERVAL_MILLIS,
                 TimeUnit.MILLISECONDS
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
             "UK_PERIODIC_BATTERY_USAGE",
             existingPeriodicWorkPolicy,
-            sendConsumptionWorkRequest
+            batteryUsageWorkRequest
         )
     }
 }
